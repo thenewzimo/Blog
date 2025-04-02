@@ -1,2 +1,2 @@
 # Blog
-Place where I'll share my ctf improvement
+This place is a wanderfull place
