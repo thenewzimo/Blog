@@ -4,39 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "a0f3f9661066c5b8",
+        "id": "e95822201b98cada",
         "type": "tabs",
         "children": [
           {
-            "id": "87adcbd1f6f6ecd7",
+            "id": "e0d1ced3f0765e44",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Underpass.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Underpass"
-            }
-          },
-          {
-            "id": "5d526cbee909709f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Code.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Code"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -183,7 +164,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5d526cbee909709f",
+  "active": "e0d1ced3f0765e44",
   "lastOpenFiles": [
     "Underpass.md",
     "Code.md",

