@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e95822201b98cada",
+        "id": "385a62a0cd6b4fd6",
         "type": "tabs",
         "children": [
           {
-            "id": "e0d1ced3f0765e44",
+            "id": "71732d710c14a9d7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
             }
           }
         ]
@@ -164,11 +168,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e0d1ced3f0765e44",
+  "active": "71732d710c14a9d7",
   "lastOpenFiles": [
+    "Heal.md",
+    "Heal.md",
     "Underpass.md",
-    "Code.md",
     "Titanic.md",
+    "Code.md",
     "Dog.md",
     "README.md"
   ]
