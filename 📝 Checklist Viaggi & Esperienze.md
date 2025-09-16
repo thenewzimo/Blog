@@ -1,4 +1,4 @@
-[]()## 🌳 Natura & Estonia
+## 🌳 Natura & Estonia
 - [ ] **Rummu trip** (21/09)  
 - [ ] **Aegna trip** (20/09)  
 - [ ] **Lahemaa National Park – road trip in auto (1 giorno)**
