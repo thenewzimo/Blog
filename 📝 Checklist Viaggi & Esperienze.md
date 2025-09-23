@@ -1,35 +1,33 @@
-## 🌳 Natura & Estonia
-- [ ] **Rummu trip** (21/09)  
-- [ ] **Aegna trip** (20/09)  
-- [ ] **Lahemaa National Park – road trip in auto (1 giorno)**
-  - Partenza Tallinn 08:30
+## 🌳 Nature & Estonia
+- [ ] **Rummu trip**  
+- [x] **Aegna trip**
+- [ ] **Lahemaa National Park – road trip by car (1 day)**
+  - Departure from Tallinn 08:30
   - Jägala Waterfall (09:15)
   - Viru Bog Trail (10:00)
-  - Palmse Manor + pranzo al sacco (12:15)
+  - Palmse Manor + packed lunch (12:15)
   - Sagadi Manor (14:30)
-  - Altja villaggio (15:45)
-  - Käsmu villaggio (16:30)
-  - Rientro Tallinn 19:00
-- [ ] **Haapsalu** (castello + mare)  
-- [ ] **Paldiski / Pakri cliffs** (scogliere spettacolari)  
-- [ ] **Saaremaa + Muhu** (isole, crateri, mulini)  
-- [ ] **Hiiumaa** (isola meno turistica, natura selvaggia)  
-- [ ] **Pärnu** (città termale e sul mare, anche d’inverno)  
-- [ ] **Setomaa** (cultura unica al confine russo)  
+  - Altja village (15:45)
+  - Käsmu village (16:30)
+  - Return to Tallinn 19:00
+- [ ] **Haapsalu** (castle + seaside)  
+- [ ] **Paldiski / Pakri cliffs** (dramatic coastal cliffs)  
+- [ ] **Saaremaa + Muhu** (islands, craters, windmills)  
+- [ ] **Hiiumaa** (less touristy island, wild nature)  
+- [ ] **Pärnu** (spa & seaside town, also nice in winter)  
+- [ ] **Setomaa** (unique culture on the Russian border)  
 
-## 🏙️ Città & Paesi vicini
-- [ ] **Lapponia** 
-- [x] Helisinki
-- [ ] **Stoccolma** (26–28/09)  
-- [ ] **Tartu** (città universitaria, musei, atmosfera viva)  
-- [ ] **Riga (Lettonia)**  
-- [ ] **Vilnius (Lituania)**  
-- [ ] **Narva & Ivangorod** (frontiera storica 🇪🇪/🇷🇺)  
+## 🏙️ Cities & Nearby Countries
+- [ ] **Lapland**  
+- [x] **Helsinki**  
+- [ ] **Stockholm**
+- [ ] **Tartu** (university city, museums, lively atmosphere)  
+- [ ] **Riga (Latvia)**  
+- [ ] **Vilnius (Lithuania)**  
+- [ ] **Narva & Ivangorod** (historic border 🇪🇪/🇷🇺)  
 
 ## 🎄 Tallinn Experience
-- [ ] **Mercatino di Natale in Raekoja plats**  
-- [ ] **Sauna estone tradizionale** (con tuffo nella neve se vi va 😅)  
-- [ ] **Passeggiata a Kadriorg d’inverno**  
-- [ ] **Pattinaggio sul ghiaccio a Harju plats o Toompea**  
-
-
+- [ ] **Christmas Market at Raekoja plats**  
+- [ ] **Traditional Estonian sauna** (with a snow or ice dip 😅)  
+- [ ] **Winter walk in Kadriorg**  
+- [ ] **Ice skating at Harju plats or Toompea**  
