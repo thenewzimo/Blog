@@ -5,8 +5,10 @@
 - [ ] Stroll through **Djurgården Island** – parks, nature, museums nearby  
 - [ ] Visit **Monteliusvägen viewpoint** – stunning city view, best at sunset  
 - [ ] Go up to **Katarinahissen viewpoint** – another panoramic spot  
-- [ ] See the **Stockholm Public Library (Stadsbibliotek)** – iconic round hall  
-- [ ] Do a **Subway art tour** – stations like Kungsträdgården, T-Centralen, Solna Centrum  
+- [ ] Do a **Subway art tour** – stations like Kungsträdgården, T-Centralen, Solna Centrum 
+- [ ] **Hötorget Flea Market (Norrmalm)** – second hand market, sunday, 10:00/16:00
+- [ ] **Östermalms Saluhall (Östermalm)** –  food market, sunday, 10:00/15:00
+
 
 ---
 
@@ -16,6 +18,8 @@
 - [ ] **Skansen (~8–10 €)** – open-air museum with historic houses & animals  
 - [ ] **Public transport 24h ticket (~9 €)** – metro, buses, trams, ferries  
 - [ ] **Djurgården ferry ride** (included in transport ticket) – mini boat trip across the bay  
+- [ ] **Britta Marakatt-Labba** (~10€)
+
 
 ---
 
